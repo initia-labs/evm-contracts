@@ -1,2 +1,18 @@
 .vscode
 build
+
+*.swp
+*.swo
+
+# Logs
+logs
+*.log
+
+# Dependency directory
+node_modules
+
+# Debug log from npm
+npm-debug.log
+
+# macOS
+.DS_Store

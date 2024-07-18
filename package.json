@@ -1,0 +1,10 @@
+{
+  "name": "@initia/evm-contracts",
+  "version": "0.0.1",
+  "description": "EVM contracts for minievm",
+  "files": [
+    "/**/*.sol"
+  ],
+  "author": "InitiaLabs",
+  "license": "MIT"
+}
