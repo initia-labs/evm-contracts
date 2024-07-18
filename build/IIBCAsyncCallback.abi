@@ -1,1 +1,0 @@
-[{"inputs":[{"internalType":"uint64","name":"callback_id","type":"uint64"},{"internalType":"bool","name":"success","type":"bool"}],"name":"ibc_ack","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint64","name":"callback_id","type":"uint64"}],"name":"ibc_timeout","outputs":[],"stateMutability":"nonpayable","type":"function"}]
