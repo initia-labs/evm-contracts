@@ -9,4 +9,4 @@ update:
 	rm -rf ./**/*.go && git add . && git commit -m 'remove *.go'
 
 	@echo "merge the updates on contracts main"
-	git checkout main && git merge contracts --squash && git branch -D contracts && git commit --no-edit
+	git checkout main && git merge contracts --squash && git branch -D contracts && git commit -m 'pull updates'
