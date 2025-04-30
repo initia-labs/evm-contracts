@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.24;
+pragma solidity ^0.8.25;
 
 import "../i_cosmos/ICosmos.sol";
 
@@ -12,6 +12,15 @@ address constant CHAIN_ADDRESS = 0x0000000000000000000000000000000000000001;
 contract ERC20ACL {
     modifier onlyChain() {
         require(msg.sender == CHAIN_ADDRESS, "ERC20: caller is not the chain");
+        _;
+    }
+
+    modifier onlyAuthority() {
+        require(
+            COSMOS_CONTRACT.is_authority_address(msg.sender),
+            "ERC20: caller is not the authority"
+        );
+
         _;
     }
 

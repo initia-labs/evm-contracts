@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.24;
+pragma solidity ^0.8.25;
 
 import "../erc20/ERC20.sol";
 import "../i_erc20_registry/IERC20Registry.sol";
@@ -12,7 +12,12 @@ contract ERC20Factory is ERC20Registry {
         string memory symbol,
         uint8 decimals
     ) external returns (address) {
-        ERC20 erc20 = new ERC20(name, symbol, decimals);
+        ERC20 erc20 = new ERC20(
+            name,
+            symbol,
+            decimals,
+            msg.sender != CHAIN_ADDRESS
+        );
 
         // register the ERC20 contract with the ERC20 registry
         ERC20_REGISTRY_CONTRACT.register_erc20_from_factory(address(erc20));
